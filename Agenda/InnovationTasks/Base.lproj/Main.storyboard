@@ -108,6 +108,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="uVb-Bd-Sn7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskDescriptionCell" rowHeight="53" id="QRT-xk-EGx" customClass="TaskDescriptionTableViewCell" customModule="InnovationTasks" customModuleProvider="target">
                                 <rect key="frame" x="20" y="49.5" width="374" height="53"/>
@@ -119,7 +120,7 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Your Task Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-gV-UzG">
                                             <rect key="frame" x="20" y="8" width="334" height="37"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="80S-Sk-S6a"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="80S-Sk-S6a" userLabel="height ≥ 35"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -163,7 +164,7 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXL-Ur-aUD">
                                             <rect key="frame" x="20" y="8" width="278.5" height="37"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="37" id="uLV-DD-Lac"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="5ya-0r-GT7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -173,7 +174,7 @@
                                         <constraint firstAttribute="trailing" secondItem="AXL-Ur-aUD" secondAttribute="trailing" constant="46" id="1rF-wh-QlE"/>
                                         <constraint firstItem="AXL-Ur-aUD" firstAttribute="leading" secondItem="4WU-ZI-wFm" secondAttribute="leading" constant="20" id="OgF-ea-2NB"/>
                                         <constraint firstItem="AXL-Ur-aUD" firstAttribute="top" secondItem="4WU-ZI-wFm" secondAttribute="top" constant="8" id="nWa-4p-lOM"/>
-                                        <constraint firstAttribute="bottom" secondItem="AXL-Ur-aUD" secondAttribute="bottom" constant="8" id="ygm-aR-gB9"/>
+                                        <constraint firstAttribute="bottom" secondItem="AXL-Ur-aUD" secondAttribute="bottom" constant="8" id="qdT-PP-cbB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

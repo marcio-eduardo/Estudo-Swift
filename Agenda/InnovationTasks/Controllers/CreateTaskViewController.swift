@@ -9,11 +9,16 @@ import UIKit
 
 class CreateTaskViewController: UITableViewController {
     
-    private var datePicker: UIDatePicker = UIDatePicker()
+    //Instanciando o date picker
+    private var datePicker = UIDatePicker()
+    private var dateFormatter = DateFormatter()
+    
+    private var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.datePickerMode = .dateAndTime
+        datePicker.frame.size = CGSize(width: 0, height: 200 )
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,17 +53,30 @@ class CreateTaskViewController: UITableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateTimeTableViewCell
+        //Indica a view que responde a chamada do date picker
         cell.dateTimeTextField.inputView = datePicker
         cell.dateTimeTextField.inputAccessoryView = accessoryView()
         return cell
     }
     
+    //MARK: - Action buttons
     @IBAction func tapSaveButton(_ sender: Any) {
         print("Task Saved")
     }
     
-    //Mark: Action buttons
     
+    
+    //MARK: - UITextFieldDelegate Methods
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let cell = textField.superview?.superview as? DateTimeTableViewCell
+        
+        if let dateCell = cell {
+            self.selectedIndexPath = tableView.indexPath(for: dateCell)
+        }
+        
+         
+    }
     func accessoryView() -> UIView {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -73,6 +91,11 @@ class CreateTaskViewController: UITableViewController {
     }
     
     @objc func selectDate() {
-        
+        if let indexPath = self.selectedIndexPath {
+            let cell = tableView.cellForRow(at: indexPath) as? DateTimeTableViewCell
+            if let dateCell = cell {
+                dateCell.dateTimeTextField.text = dateFormatter.string(from: datePicker.date)
+            }
+        }
     }
 }
